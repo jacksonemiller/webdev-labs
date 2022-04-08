@@ -7,6 +7,8 @@ import requests
 from helpers import CurrentUser
 from pprint import pprint
 
+import random
+
 # initializes flask app:
 app = Flask(__name__)
 
@@ -30,7 +32,7 @@ quotes = (
 ##############
 @app.route('/')
 def exercise1():
-    return 'Hello World!'
+    return f'Hello {current_user.first_name} {current_user.last_name}!'
 
 
 ##############
@@ -40,7 +42,8 @@ def exercise1():
 def exercise2():
     return render_template(
         'quote-of-the-day.html',
-        user=current_user
+        user=current_user,
+        quote=random.choice(quotes)
     )
 
 ##############
