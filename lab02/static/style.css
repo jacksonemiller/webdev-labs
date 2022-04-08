@@ -27,6 +27,11 @@ main {
     margin: 3vh;
 }
 
+section {
+    margin: 5px;
+    border-bottom: 1px solid grey;
+}
+
 
 @media only screen and (max-width: 1000px) {
     /* Media queries go here */

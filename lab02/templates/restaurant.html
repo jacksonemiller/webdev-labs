@@ -10,12 +10,13 @@
 <body>
     {% include 'includes/header.html' %}
 
-    <main>
-        <p>Search location: {{location}}</p>
-        <p>Search term: {{search_term or 'None Specified'}}</p>
-        <p>Data: {{ restaurant }}</p>
-        <h2>Top Restaurant:</h2> 
-        <p>Name: {{ restaurant.get('name') }}</p>
+    <main style="width: 20%; display: flex; flex-direction: column; border: 1px solid grey; padding: 3px">
+        <h2>{{ restaurant.get('name') }}</h2>
+        <img src="{{ restaurant.image_url }}">
+        <h5>{{ restaurant.display_address }}</h5>
+        <section>Price: {{ restaurant.price }}</section>
+        <section>Rating: {{ restaurant.rating }}</section>
+        <section># Reviews: {{ restaurant.rating }}</section>
     </main>
 </body>
 </html>
